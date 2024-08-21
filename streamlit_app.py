@@ -1,7 +1,9 @@
 import streamlit as st
+import aspose.cad as cad
 from aspose.cad import Color
 from aspose.cad import Image as CadImage
 from aspose.cad.imageoptions import DwgOptions, CadRasterizationOptions
+import os
 
 def convert_to_dwg(img_file, dwg_output_file):
     # Load the SVG file using Aspose.CAD
@@ -39,3 +41,4 @@ if uploaded_file is not None:
             st.download_button("Download DWG file", data=file, file_name=dwg_output_file)
     else:
         st.error("Conversion failed or resulted in an empty DWG file.")
+    
